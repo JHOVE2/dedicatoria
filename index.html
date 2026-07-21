@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una Galaxia Para Ti</title>
+
+  <!-- Google Fonts para una tipografía romántica/bonita -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS locales -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Mensaje flotante de instrucciones / título -->
+  <div id="ui-header">
+    <h1>Te Amo ❤️</h1>
+    <!-- Elemento de Audio (Oculto) -->
+<audio id="musica-fondo" loop>
+  <source src="assets/musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Botón flotante de control de música -->
+<button id="btn-musica">🎵</button>
+    <p>Toca para explorar la galaxia</p>
+  </div>
+
+  <!-- Contenedor donde se renderizará el Universo 3D -->
+  <div id="canvas-container"></div>
+
+  <!-- Carta Emergente (Modal) -->
+  <div id="modal-carta" class="modal-oculto">
+    <div class="modal-contenido">
+      <button id="btn-cerrar">&times;</button>
+      <h2 id="modal-titulo">Mi amor,</h2>
+      <p id="modal-texto">
+        Aquí irá tu dedicatoria especial...
+      </p>
+      <span id="modal-firma">Siempre tuyo.</span>
+    </div>
+  </div>
+
+  <!-- Carga de Three.js y OrbitControls vía CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- Script principal de lógica JS -->
+  <script src="script.js"></script>
+</body>
+</html>

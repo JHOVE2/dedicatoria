@@ -1,0 +1,149 @@
+/* Reseteo básico para pantalla completa */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+/* Contenedor del canvas 3D */
+#canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Título e instrucciones flotantes */
+#ui-header {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none; /* Permite arrastrar el 3D aunque se toque el texto */
+}
+
+#ui-header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #ff69b4;
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
+#ui-header p {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* --- Ventana Modal (La Carta) --- */
+.modal-oculto {
+  display: none !important;
+}
+
+#modal-carta {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.modal-contenido {
+  position: relative;
+  background: rgba(20, 10, 30, 0.9);
+  border: 1px solid #ff4081;
+  box-shadow: 0 0 25px rgba(255, 64, 129, 0.4);
+  border-radius: 15px;
+  padding: 35px 30px;
+  max-width: 450px;
+  width: 90%;
+  text-align: left;
+  color: #fff;
+}
+
+#btn-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #ff69b4;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#modal-titulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  color: #ff69b4;
+  margin-bottom: 15px;
+}
+
+#modal-texto {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e0d0f0;
+  margin-bottom: 20px;
+}
+
+#modal-firma {
+  display: block;
+  text-align: right;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: #ff8da1;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Botón flotante para la música */
+#btn-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 50;
+  background: rgba(255, 105, 180, 0.2);
+  border: 1px solid #ff69b4;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  transition: all 0.3s ease;
+}
+
+#btn-musica:hover {
+  transform: scale(1.1);
+  background: rgba(255, 105, 180, 0.5);
+}
